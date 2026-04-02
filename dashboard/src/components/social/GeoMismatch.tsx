@@ -65,7 +65,7 @@ export default function GeoMismatch() {
           <YAxis type="category" dataKey="country" width={100} fontSize={10} tick={{ fill: '#a1a1aa' }} />
           <Tooltip
             {...TOOLTIP_STYLE}
-            formatter={(value: number) => `${value.toFixed(1)}%`}
+            formatter={(value: any) => `${Number(value).toFixed(1)}%`}
           />
           <Legend wrapperStyle={{ fontSize: 11, color: '#a1a1aa' }} />
           <Bar dataKey="tiktokPct" name="TikTok Audience %" barSize={10} radius={[0, 4, 4, 0]}>

@@ -71,7 +71,7 @@ export default function MonthlyRetention() {
               <YAxis fontSize={10} stroke="#525252" domain={[95, 'auto']} />
               <Tooltip
                 {...TOOLTIP_STYLE}
-                formatter={(value: number) => [`${value.toFixed(2)}%`, 'Retention']}
+                formatter={(value: any) => [`${Number(value).toFixed(2)}%`, 'Retention']}
               />
               <ReferenceLine y={100} stroke="#525252" strokeDasharray="3 3" />
               <Bar dataKey="retention" radius={[6, 6, 0, 0]}>

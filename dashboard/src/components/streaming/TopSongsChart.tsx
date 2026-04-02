@@ -70,10 +70,10 @@ export default function TopSongsChart() {
               <YAxis type="category" dataKey="name" width={140} fontSize={11} tick={{ fill: '#a1a1aa' }} />
               <Tooltip
                 {...TOOLTIP_STYLE}
-                formatter={(value: number) => [value.toLocaleString(), 'Streams']}
-                labelFormatter={(label: string) => {
+                formatter={(value: any) => [Number(value).toLocaleString(), 'Streams']}
+                labelFormatter={(label: any) => {
                   const item = barData.find((d) => d.name === label);
-                  return item?.fullName || label;
+                  return item?.fullName || String(label);
                 }}
               />
               <Bar dataKey="streams" radius={[0, 6, 6, 0]}>
@@ -97,9 +97,9 @@ export default function TopSongsChart() {
                 dataKey="value"
                 paddingAngle={2}
                 stroke="none"
-                label={({ pct, x, y, fill }: { pct: number; x: number; y: number; fill: string }) => (
-                  <text x={x} y={y} fill={fill} fontSize={12} fontWeight={600} textAnchor="middle" dominantBaseline="central">
-                    {`${pct.toFixed(1)}%`}
+                label={(props: any) => (
+                  <text x={props.x} y={props.y} fill={props.fill} fontSize={12} fontWeight={600} textAnchor="middle" dominantBaseline="central">
+                    {`${Number(props.pct).toFixed(1)}%`}
                   </text>
                 )}
                 labelLine={false}
@@ -110,7 +110,7 @@ export default function TopSongsChart() {
               </Pie>
               <Tooltip
                 {...TOOLTIP_STYLE}
-                formatter={(_: number, __: string, props: { payload: { fullName: string; pct: number } }) => [
+                formatter={(_: any, __: any, props: any) => [
                   formatPct(props.payload.pct),
                   props.payload.fullName,
                 ]}

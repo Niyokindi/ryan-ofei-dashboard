@@ -3,7 +3,7 @@ import {
   LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid,
 } from 'recharts';
 import Card from '../Card';
-import { loadEngagementRate, type EngagementRate } from '../../utils/csvLoader';
+import { loadEngagementRate } from '../../utils/csvLoader';
 import { linearRegression } from '../../utils/metrics';
 import { TOOLTIP_STYLE } from '../../utils/constants';
 
@@ -99,8 +99,8 @@ export default function EngagementTrend() {
           <YAxis fontSize={10} stroke="#525252" />
           <Tooltip
             {...TOOLTIP_STYLE}
-            formatter={(value: number, name: string) => [
-              `${value.toFixed(2)}%`,
+            formatter={(value: any, name: any) => [
+              `${Number(value).toFixed(2)}%`,
               name === 'instagram' ? 'Instagram' : 'TikTok',
             ]}
           />

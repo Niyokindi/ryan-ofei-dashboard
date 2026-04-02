@@ -249,7 +249,6 @@ export default function InsightsPanel() {
   }, []);
 
   const strengths = insights.filter((i) => i.type === 'strength');
-  const weaknesses = insights.filter((i) => i.type === 'weakness');
   const opportunities = insights.filter((i) => i.type === 'opportunity');
 
   const typeStyles = {

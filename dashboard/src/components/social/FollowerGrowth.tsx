@@ -107,8 +107,8 @@ export default function FollowerGrowth() {
           <YAxis fontSize={10} stroke="#525252" tickFormatter={(v: number) => formatNumber(v)} />
           <Tooltip
             {...TOOLTIP_STYLE}
-            formatter={(value: number, name: string) => [
-              value.toLocaleString(),
+            formatter={(value: any, name: any) => [
+              Number(value).toLocaleString(),
               name === 'instagram' ? 'Instagram' : 'TikTok',
             ]}
           />

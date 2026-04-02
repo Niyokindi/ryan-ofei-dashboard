@@ -71,8 +71,8 @@ export default function ListenerTrend() {
             <YAxis hide domain={['dataMin', 'dataMax']} />
             <Tooltip
               {...TOOLTIP_STYLE}
-              formatter={(value: number) => [formatNumber(value), 'Listeners']}
-              labelFormatter={(l: string) => `Date: ${l}`}
+              formatter={(value: any) => [formatNumber(Number(value)), 'Listeners']}
+              labelFormatter={(l: any) => `Date: ${l}`}
             />
             <Area
               type="monotone"

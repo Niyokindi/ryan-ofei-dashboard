@@ -47,7 +47,7 @@ export default function ConcentrationIndex() {
           <YAxis fontSize={10} stroke="#525252" domain={[0, 'auto']} />
           <Tooltip
             {...TOOLTIP_STYLE}
-            formatter={(value: number) => [value.toFixed(4), 'HHI']}
+            formatter={(value: any) => [Number(value).toFixed(4), 'HHI']}
           />
           <ReferenceLine y={0.05} stroke="#fbbf2466" strokeDasharray="3 3" />
           <ReferenceLine y={0.15} stroke="#f8717166" strokeDasharray="3 3" />

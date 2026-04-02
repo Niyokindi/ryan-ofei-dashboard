@@ -103,8 +103,8 @@ export default function FollowerEngagementRatio() {
             <YAxis yAxisId="right" fontSize={9} orientation="right" stroke={rateColor} />
             <Tooltip
               {...TOOLTIP_STYLE}
-              formatter={(value: number, name: string) => [
-                name === 'followers' ? value.toLocaleString() : `${value.toFixed(2)}%`,
+              formatter={(value: any, name: any) => [
+                name === 'followers' ? Number(value).toLocaleString() : `${Number(value).toFixed(2)}%`,
                 name === 'followers' ? 'Followers' : 'Engagement Rate',
               ]}
             />
